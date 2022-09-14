@@ -1,18 +1,21 @@
-import MainPage from './MainPage'
+import { Component } from 'react';
+import MainPage from './MainPage';
+import TransactionHistoryPage from './TransactionHistoryPage/TransactionHistoryPage';
 
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      <MainPage />
-    </div>
-  );
-};
+class App extends Component {
+  state = {
+    activePage: 'main',
+  };
+  render() {
+    return (
+      <div>
+        {this.state.activePage === 'main' ? (
+          <MainPage />
+        ) : (
+          <TransactionHistoryPage />
+        )}
+      </div>
+    );
+  }
+}
+export { App };

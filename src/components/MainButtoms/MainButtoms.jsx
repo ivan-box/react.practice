@@ -1,10 +1,22 @@
 const MainButtoms = () => {
-    return (
-        <div>
-            <button>expenses</button>
-            <button>income</button>
-        </div>
-    );
-}
+  return (
+    <div>
+      <button
+        onClick={() => {
+          console.log('expenses');
+        }}
+      >
+        expenses
+      </button>
+      <button
+        onClick={() => {
+          console.log('income');
+        }}
+      >
+        income
+      </button>
+    </div>
+  );
+};
 
 export default MainButtoms;
