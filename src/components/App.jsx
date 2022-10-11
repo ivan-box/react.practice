@@ -6,13 +6,16 @@ class App extends Component {
   state = {
     activePage: 'main',
   };
+  changePageHandler = page => {
+    this.setState({ activePage: page });
+  };
   render() {
     return (
       <div>
         {this.state.activePage === 'main' ? (
-          <MainPage />
+          <MainPage changePageHandler={this.changePageHandler} />
         ) : (
-          <TransactionHistoryPage />
+          <TransactionHistoryPage changePageHandler={this.changePageHandler} />
         )}
       </div>
     );
